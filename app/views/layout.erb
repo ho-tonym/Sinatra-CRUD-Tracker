@@ -1,0 +1,13 @@
+<!doctype html>
+
+<div class="container">
+  <% if logged_in? %>
+     <p>Welcome, <%=current_user.username%>
+     <br></br>
+  <% else %>
+     <a href="/signup">Sign Up</a>
+     <a href="/login">Login</a>
+  <% end %>
+</div>
+
+ <%= yield %>
