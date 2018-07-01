@@ -13,8 +13,9 @@
 ActiveRecord::Schema.define(version: 2) do
 
   create_table "gazorpians", force: :cascade do |t|
-    t.integer "name"
-    t.string "age"
+    t.integer "user_id"
+    t.string "name"
+    t.integer "age"
   end
 
   create_table "users", force: :cascade do |t|

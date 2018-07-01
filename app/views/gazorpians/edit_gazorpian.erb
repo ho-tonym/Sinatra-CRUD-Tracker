@@ -1,0 +1,9 @@
+<h3>Edit Gazorpian</h3>
+
+<form action="/gazorpians/<%=@gazorpian.id%>" method="post">
+<input id="hidden" type="hidden" name="_method" value="PATCH">
+Name: <input type="text" id="name" name="name" value="<%= @gazorpian.name %>">
+Age: <input type="text" id="age" name="age" value="<%= @gazorpian.age %>">
+
+<input type="submit" value="submit">
+</form>

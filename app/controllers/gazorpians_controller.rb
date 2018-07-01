@@ -1,4 +1,4 @@
-class GazorpianController < Sinatra::Base
+class GazorpiansController < ApplicationController
 
   get '/gazorpians' do
     if logged_in?
@@ -18,9 +18,9 @@ class GazorpianController < Sinatra::Base
   end
 
   post '/gazorpians' do
-    @gazorpian = current_user.gazorpians.build(content: params[:content])
-    if params[:content] == "" || !@gazorpian.save
-      redirect '/gazorpians/new'
+    @gazorpian = current_user.gazorpians.build(name: params[:name], age: params[:age])
+    if params[:name] == "" || params[:age] == ""||!@gazorpian.save
+      redirect 'gazorpians/new'
     else
       redirect "/gazorpians/#{@gazorpian.id}"
     end
@@ -50,12 +50,12 @@ class GazorpianController < Sinatra::Base
 
   patch '/gazorpians/:id' do
     if logged_in?
-      if params[:content] == ""
+      if params[:name] == "" || params[:age] == ""
         redirect to "/gazorpians/#{params[:id]}/edit"
       else
         @gazorpian = Gazorpian.find_by_id(params[:id])
         if @gazorpian && @gazorpian.user == current_user
-          if @gazorpian.update(content: params[:content])
+          if @gazorpian.update(age: params[:age]) || @gazorpian.update(name: params[:name])
             redirect to "/gazorpians/#{@gazorpian.id}"
           end
         end

@@ -1,0 +1,30 @@
+<head>
+<style>
+  table {
+      font-family: arial, sans-serif;
+  }
+
+  td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+  }
+</style>
+
+<a href="/gazorpians/new"> <button>Create Gazorpians</button></a>
+<a href="/logout"><button>Log Out</button></a>
+
+<h3>These are all the Gazorpians you own:</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <% Gazorpian.all.each do |x|%>
+  <tr>
+    <th><a href="/gazorpians/<%= x.id %>"><%= x.name %></a></th>
+    <th><%= x.age %></th>
+  </tr>
+  <% end %>
+</table>

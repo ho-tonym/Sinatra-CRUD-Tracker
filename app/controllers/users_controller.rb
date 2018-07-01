@@ -1,4 +1,4 @@
-class UserController < Sinatra::Base
+class UsersController < ApplicationController
 
   get '/signup' do
     if logged_in?
@@ -45,6 +45,7 @@ class UserController < Sinatra::Base
     end
   end
 
+#doesnt work and idk what it does
   get "/users/:slug" do
     @user = User.find_by_slug(params[:slug])
     erb :'users/show'

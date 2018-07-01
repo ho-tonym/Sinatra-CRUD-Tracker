@@ -1,27 +1,15 @@
 <!doctype html>
 <div class="container">
+<a href="/"><button>Home</button></a>
+<a href="/gazorpians"><button>My Gazorpians</button></a>
+
+
   <% if logged_in? %>
      <p>Welcome, <%=current_user.username%>
      <br></br>
   <% else %>
-  <tbody>
-    <tr>
-      <td class="css_stuff">
-        <label for="email">Username</label></td>
-      <td><input type="email" name="email" id="email"></td>
-
-      <td class="css_stuff">
-        <label for="pass">Password</label></td>
-      <td><input type="password" name="pass" id="pass"></td>
-    </tr>
-    <tr>
-      <td><label class="css_stuff" id="loginbutton" for="loginbutton">
-        <input value="Log In" type="submit" id="loginbutton">
-      </label></td>
-    </tr>
-  </tbody>
-    <a href="/signup"><button>Sign Up</button></a>
+     <!-- <a href="/signup">Sign Up</a>
+     <a href="/login">Login</a> -->
   <% end %>
-</div>
 
 <%= yield %>

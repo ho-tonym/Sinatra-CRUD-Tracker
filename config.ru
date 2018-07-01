@@ -6,7 +6,7 @@ require './config/environment'
 # 4.2 activerecord
 
 use Rack::MethodOverride
-use SessionsController
-use GazorpianController
-use UserController
+use GazorpiansController
+use UsersController
+
 run ApplicationController

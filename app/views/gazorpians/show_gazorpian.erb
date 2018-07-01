@@ -1,0 +1,20 @@
+<h1>A Gazorpian owned by <a href="/users/<%= @gazorpian.user.slug %>"><%= @gazorpian.user.username %></a></h1>
+
+<div class="gazorpian-info">
+  <p>Name: <%= @gazorpian.name %></p>
+  <p>Age: <%= @gazorpian.age %></p>
+</div>
+
+
+<div>
+    <a href="/gazorpians/<%= @gazorpian.id %>/edit"><button>Edit Gazorpian</button></a>
+</div><br>
+<div>
+    <form method="post" action="/gazorpians/<%= @gazorpian.id %>/delete">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete Gazorpian">
+    </form>
+</div><br>
+<div>
+  <a href="/gazorpians"><button>Back to all owned Gazorpians</button></a>
+</div>

@@ -1,1 +1,10 @@
 <h1 align="center">Welcome to Gazorpazorp!</h1>
+
+
+<% if logged_in? %>
+<h4 align="center">Check on your Gazorpians</h4>
+<% else %>
+<h4 align="center">Please sign in to view your Gazorpazorps.</h4>
+<a href="/signup"><button>Sign Up</button></a>
+<a href="/login"><button>Log In</button></a>
+<% end %>

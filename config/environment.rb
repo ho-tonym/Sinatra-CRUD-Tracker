@@ -1,5 +1,4 @@
 require 'bundler'
-
 Bundler.require
 
 ActiveRecord::Base.establish_connection(
@@ -8,8 +7,3 @@ ActiveRecord::Base.establish_connection(
 )
 
 require_all 'app'
-
-#bundle init
-#touch config.ru
-#make environment file
-#add gems, run bundle
