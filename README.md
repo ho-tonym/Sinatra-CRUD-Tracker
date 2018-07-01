@@ -5,7 +5,6 @@
 To use this app:
 1. bundle install
 2. rake:db migrate
-3. rake db:seed
 4. enter shotgun into your terminal to view the app through your browser at http://localhost:9393/
 
 ## Contributing
