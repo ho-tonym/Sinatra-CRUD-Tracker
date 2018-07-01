@@ -2,7 +2,7 @@ class GazorpiansController < ApplicationController
 
   get '/gazorpians' do
     if logged_in?
-      @gazorpians = Gazorpian.all
+      @gazorpians = current_user.gazorpians
       erb :'/gazorpians/gazorpians'
     else
       redirect '/login'

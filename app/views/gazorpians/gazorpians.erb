@@ -21,7 +21,7 @@
     <th>Name</th>
     <th>Age</th>
   </tr>
-  <% Gazorpian.all.each do |x|%>
+  <% @gazorpians.each do |x|%>
   <tr>
     <th><a href="/gazorpians/<%= x.id %>"><%= x.name %></a></th>
     <th><%= x.age %></th>

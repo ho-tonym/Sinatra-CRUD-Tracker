@@ -1,4 +1,4 @@
-# Sinatra-CRUD-Tracker
+# sinatra-gazorpian-tracker
 
 ## Usage
 
