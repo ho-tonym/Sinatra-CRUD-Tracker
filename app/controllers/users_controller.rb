@@ -12,11 +12,15 @@ class UsersController < ApplicationController
     if params[:username] == "" || params[:password] == "" || params[:email] == ""
       redirect '/signup'
     else
+      if User.find_by(:username => params[:username])
+        redirect '/signup'
+      end
       @user = User.create(username: params[:username], password: params[:password], email: params[:email])
       session[:user_id] = @user.id
       redirect '/gazorpians'
     end
   end
+
 
   get '/login' do
     if logged_in?
